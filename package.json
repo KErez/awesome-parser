@@ -4,7 +4,7 @@
   "description": "An awesome parser that parse something only to demonstrate TDD",
   "main": "parser.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter spec --compilers ts:ts-node/register ./test/*.ts"
   },
   "keywords": [
     "TDD"
