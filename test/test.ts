@@ -30,4 +30,12 @@ describe('Awesome parser tests built with TDD methodology', function () {
 			title: "Awesome parser do nothing"
 		});
 	});
+
+	it('expect general string to get into the extras property', function() {
+		let parser = new AwesomeParserTDD();
+		let result = parser.parse('This is a general string without any known entity');
+		expect(result).to.deep.equal({
+			extras: ["This is a general string without any known entity"]
+		});
+	});
 });
