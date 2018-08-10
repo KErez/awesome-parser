@@ -1,5 +1,5 @@
 export class AwesomeParserTDD {
-	parse(){
+	parse(input? : string | null){
 		return {};
 	}
 }
