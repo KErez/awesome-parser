@@ -1,0 +1,24 @@
+{
+  "name": "awesome-parser",
+  "version": "1.0.0",
+  "description": "An awesome parser that parse something only to demonstrate TDD",
+  "main": "parser.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "TDD"
+  ],
+  "author": "kfirerez75@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^5.2.4",
+    "@types/node": "^10.5.2",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.0",
+    "tslint": "5.10.0",
+    "typescript": "^3.0.1"
+  }
+}
