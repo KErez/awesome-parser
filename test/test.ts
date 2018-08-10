@@ -23,4 +23,11 @@ describe('Awesome parser tests built with TDD methodology', function () {
 		expect(result).to.be.empty;
 	});
 
+	it('expect parsing a title from string', function() {
+		let parser = new AwesomeParserTDD();
+		let result = parser.parse('__TITLE__Awesome parser do nothing__TITLE__');
+		expect(result).to.deep.equal({
+			title: "Awesome parser do nothing"
+		});
+	});
 });
