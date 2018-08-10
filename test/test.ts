@@ -38,4 +38,15 @@ describe('Awesome parser tests built with TDD methodology', function () {
 			extras: ["This is a general string without any known entity"]
 		});
 	});
+
+	it('expect parsing a title from string', function() {
+		let parser = new AwesomeParserTDD();
+		let result = parser.parse('__TITLE__it will not have suffix and goes to extras');
+		expect(result).to.deep.equal({
+			extras: [
+				"",
+				"it will not have suffix and goes to extras"
+			]
+		});
+	});
 });
