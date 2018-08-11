@@ -58,4 +58,28 @@ describe('Awesome parser tests built with TDD methodology', function () {
 			]
 		});
 	});
+
+	it('expect parsing multiple titles to use only the first one as title', function() {
+		let parser = new AwesomeParserTDD();
+		let result = parser.parse('__TITLE__real title__TITLE____TITLE__go to extras__TITLE__');
+		expect(result).to.deep.equal({
+			title: "real title",
+			extras: [
+				"__TITLE__go to extras__TITLE__"
+			]
+		});
+	});
+
+	it('expect parsing multiple titles to use only the first one as title 2', function() {
+		let parser = new AwesomeParserTDD();
+		let result = parser.parse('Some prefix __TITLE__real title__TITLE__and middle__TITLE__go to extras__TITLE__');
+		expect(result).to.deep.equal({
+			title: "real title",
+			extras: [
+				"Some prefix ",
+				"and middle__TITLE__go to extras__TITLE__"
+			]
+		});
+	});
+
 });
