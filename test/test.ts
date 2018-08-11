@@ -39,13 +39,22 @@ describe('Awesome parser tests built with TDD methodology', function () {
 		});
 	});
 
-	it('expect parsing a title from string', function() {
+	it('expect parsing extras due to none closed title', function() {
 		let parser = new AwesomeParserTDD();
 		let result = parser.parse('__TITLE__it will not have suffix and goes to extras');
 		expect(result).to.deep.equal({
 			extras: [
-				"",
-				"it will not have suffix and goes to extras"
+				"__TITLE__it will not have suffix and goes to extras"
+			]
+		});
+	});
+
+	it('expect parsing extras due to none opened title', function() {
+		let parser = new AwesomeParserTDD();
+		let result = parser.parse('it will not have suffix and goes to extras__TITLE__');
+		expect(result).to.deep.equal({
+			extras: [
+				"it will not have suffix and goes to extras__TITLE__"
 			]
 		});
 	});

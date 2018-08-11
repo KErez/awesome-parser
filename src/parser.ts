@@ -11,7 +11,7 @@ export class AwesomeParserTDD {
 			}
 		}
 		return {
-			extras: parts
+			extras: [input]
 		}
 	}
 }
